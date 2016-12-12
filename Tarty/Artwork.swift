@@ -10,6 +10,8 @@ import UIKit
 
 class Artwork: NSObject {
     var id: String?
+    var artistId: String?
+    var artist: Artist?
     var title: String?
     var medium: String?
     var category: String?
@@ -30,6 +32,21 @@ class Artwork: NSObject {
         let linksDict = dictionary["_links"] as? NSDictionary
         if let dict = linksDict {
             links = ArtworkLinks(dictionary: dict)
+        }
+    }
+    
+    func fetchArtist(success: ((Artist) -> ())?, failure: ((Error?) -> ())?) {
+        
+        if let id = self.id {
+            ArtsyClient.sharedInstance?.loadArtists(artworkId: id, success: {
+                (artists: [Artist]) -> () in
+                self.artist = artists.first
+                success?(self.artist!)
+            }, failure: {
+                (error: Error?) -> () in
+                //
+                failure?(error)
+            })
         }
     }
 

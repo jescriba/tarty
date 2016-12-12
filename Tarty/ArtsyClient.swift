@@ -38,6 +38,53 @@ class ArtsyClient: BDBOAuth1SessionManager {
         }
     }
     
+    func loadArtists(offset: Int? = nil, size: Int? = nil, artworkId: String? = nil, similarToArtistId: Int? = nil, geneId: Int? = nil, success: @escaping ([Artist]) -> (), failure: @escaping (Error?) -> ()) {
+        
+        var params = [(String, String)]()
+        
+        if let artworkId = artworkId {
+            params.append(("artwork_id", artworkId))
+        }
+        if let offset = offset {
+            params.append(("offset", String(offset)))
+        }
+        if let size = size {
+            params.append(("size", String(size)))
+        }
+        if let geneId = geneId {
+            params.append(("gene_id", String(geneId)))
+        }
+        if let similarToArtistId = similarToArtistId {
+            params.append(("similar_to_artist_id", String(similarToArtistId)))
+        }
+        
+        let endpoint = endPoint("/artists", tuples: params)
+        let endpointURL = URL(string: endpoint)!
+        var request = URLRequest(url: endpointURL)
+        request.httpMethod = "GET"
+        request.addValue(xAppToken!, forHTTPHeaderField: "X-XAPP-Token")
+        
+        URLSession.shared.dataTask(with: request, completionHandler: {
+            (data: Data?, response: URLResponse?, error: Error?) -> () in
+            if let data = data {
+                let dictionary = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
+                let embeddedDictionary = dictionary??["_embedded"] as? NSDictionary
+                let artDictionaries = embeddedDictionary?["artists"] as? [NSDictionary]
+                var artists = [Artist]()
+                if let artDictionaries = artDictionaries {
+                    for artDict in artDictionaries {
+                        artists.append(Artist(dictionary: artDict))
+                    }
+                }
+                
+                success(artists)
+            } else {
+                print(error?.localizedDescription ?? "Error loading artworks")
+            }
+        }).resume()
+        
+    }
+    
     func loadArtworks(offset: Int? = nil, size: Int? = nil, artistId: Int? = nil, showId: Int? = nil, similarToArtworkId: Int? = nil, geneId: Int? = nil, success: @escaping ([Artwork]) -> (), failure: @escaping (Error?) -> ()) {
         
         var params = [(String, String)]()

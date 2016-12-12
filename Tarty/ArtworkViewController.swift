@@ -23,6 +23,15 @@ class ArtworkViewController: UIViewController {
         didSet {
             guard artwork != nil else {return}
             
+            artwork?.fetchArtist(success: {
+                (artist: Artist) -> () in
+                self.artist = artist
+            }, failure: {
+                (error: Error?) -> () in
+                // TODO
+                print(error?.localizedDescription ?? "Error fetching artist")
+            })
+            
             view.layoutIfNeeded()
             if let url = artwork!.links?.thumbnail {
                 imageView.setImageWith(url)
@@ -30,13 +39,12 @@ class ArtworkViewController: UIViewController {
                     self.imageView.alpha = 1
                 }, completion: nil)
             }
-            //artwork.artist
         }
     }
     var artist: Artist? {
         didSet {
             guard artist != nil else {return}
-            
+
             view.layoutIfNeeded()
             artistName.text = artist?.name
             artistBirthDate.text = artist?.birthday
@@ -60,7 +68,7 @@ class ArtworkViewController: UIViewController {
         view.backgroundColor = .clear
         modalPresentationStyle = .overCurrentContext
         
-        addButton.layer.cornerRadius = 15
+        addButton.layer.cornerRadius = 20
         imageView.layer.cornerRadius = 20
         artistImageView.layer.cornerRadius = 10
         
@@ -69,6 +77,13 @@ class ArtworkViewController: UIViewController {
         backgroundView.addGestureRecognizer(recognizer)
         
         backgroundView.layer.cornerRadius = 20
+        
+        addButton.addTarget(self, action: #selector(onAddButton), for: .valueChanged)
+    }
+    
+    func onAddButton() {
+        // Toggle the state and add/remove artwork from collection
+        // TODO
     }
     
     func onPan(recognizer: UIPanGestureRecognizer) {

@@ -509,16 +509,16 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="art" translatesAutoresizingMaskIntoConstraints="NO" id="3YS-RL-L7q">
-                                        <rect key="frame" x="20" y="150" width="325" height="447"/>
+                                        <rect key="frame" x="20" y="160" width="325" height="437"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9E-re-5bB">
-                                        <rect key="frame" x="332" y="583" width="30" height="30"/>
+                                        <rect key="frame" x="322" y="573" width="40" height="40"/>
                                         <color key="backgroundColor" red="0.96820084549071617" green="0.96820084549071617" blue="0.96820084549071617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="MNa-Pu-hRE"/>
-                                            <constraint firstAttribute="width" constant="30" id="Spt-KF-0sn"/>
+                                            <constraint firstAttribute="height" constant="40" id="MNa-Pu-hRE"/>
+                                            <constraint firstAttribute="width" constant="40" id="Spt-KF-0sn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" red="0.23426653928289398" green="0.27465264857750871" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -531,7 +531,7 @@
                                     <constraint firstItem="TAY-86-bXm" firstAttribute="leading" secondItem="Gjo-sX-hij" secondAttribute="leading" constant="8" id="51G-DV-54K"/>
                                     <constraint firstItem="YCe-Ab-tRg" firstAttribute="centerY" secondItem="TAY-86-bXm" secondAttribute="centerY" id="Dxa-fE-w57"/>
                                     <constraint firstItem="YCe-Ab-tRg" firstAttribute="leading" secondItem="TAY-86-bXm" secondAttribute="trailing" constant="10" id="Hfz-RK-De6"/>
-                                    <constraint firstItem="3YS-RL-L7q" firstAttribute="top" secondItem="TAY-86-bXm" secondAttribute="bottom" constant="10" id="OkB-B6-USC"/>
+                                    <constraint firstItem="3YS-RL-L7q" firstAttribute="top" secondItem="TAY-86-bXm" secondAttribute="bottom" constant="20" id="OkB-B6-USC"/>
                                     <constraint firstItem="3YS-RL-L7q" firstAttribute="leading" secondItem="Gjo-sX-hij" secondAttribute="leading" constant="20" id="QC6-GV-fdv"/>
                                     <constraint firstAttribute="bottom" secondItem="3YS-RL-L7q" secondAttribute="bottom" constant="20" id="XBy-3d-PCO"/>
                                     <constraint firstAttribute="bottom" secondItem="X9E-re-5bB" secondAttribute="bottom" constant="4" id="a8x-3Q-ehp"/>
