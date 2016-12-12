@@ -1,0 +1,6 @@
+framework module Pods_Tarty {
+  umbrella header "Pods-Tarty-umbrella.h"
+
+  export *
+  module * { export * }
+}

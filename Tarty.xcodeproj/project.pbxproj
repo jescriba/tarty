@@ -7,21 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281485484BB4BBFF329AAA7C /* Pods_Tarty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 127DACE672231471015ED586 /* Pods_Tarty.framework */; };
+		42046EEA1DEAAB3B00787A78 /* ArtworkCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42046EE91DEAAB3B00787A78 /* ArtworkCollectionView.swift */; };
+		42046EEF1DEB634300787A78 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42046EEE1DEB634300787A78 /* Extensions.swift */; };
+		42046EF11DEB674400787A78 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42046EF01DEB674400787A78 /* WelcomeViewController.swift */; };
+		42046EF71DEB77E100787A78 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42046EF61DEB77E100787A78 /* ContainerViewController.swift */; };
+		42046EF91DEB784700787A78 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42046EF81DEB784700787A78 /* CollectionViewController.swift */; };
+		427E89311DEBB3FA007D975A /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427E89301DEBB3FA007D975A /* ExploreViewController.swift */; };
+		427E89331DEBB592007D975A /* DecoratedArtworksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427E89321DEBB592007D975A /* DecoratedArtworksView.swift */; };
+		427E89351DEBB63E007D975A /* DecoratedArtworksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427E89341DEBB63E007D975A /* DecoratedArtworksView.xib */; };
+		427E89371DEC0A8A007D975A /* ArtworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427E89361DEC0A8A007D975A /* ArtworkViewController.swift */; };
+		429883DE1DD277AF003BC71B /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429883DD1DD277AF003BC71B /* Artist.swift */; };
+		429883E11DD277C1003BC71B /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429883E01DD277C1003BC71B /* Artwork.swift */; };
+		429883E31DD27822003BC71B /* Gene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429883E21DD27822003BC71B /* Gene.swift */; };
+		429883E61DD28EAB003BC71B /* ArtworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429883E51DD28EAB003BC71B /* ArtworkCell.swift */; };
+		42B36C8D1DFB55F10092DDB0 /* CurateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B36C8C1DFB55F10092DDB0 /* CurateViewController.swift */; };
+		42B36C8F1DFE30C70092DDB0 /* NavigationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B36C8E1DFE30C70092DDB0 /* NavigationTableCell.swift */; };
 		42E10D6F1DD1A34300BC01C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E10D6E1DD1A34300BC01C9 /* AppDelegate.swift */; };
-		42E10D711DD1A34300BC01C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E10D701DD1A34300BC01C9 /* ViewController.swift */; };
+		42E10D711DD1A34300BC01C9 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E10D701DD1A34300BC01C9 /* TutorialViewController.swift */; };
 		42E10D741DD1A34300BC01C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E10D721DD1A34300BC01C9 /* Main.storyboard */; };
 		42E10D761DD1A34300BC01C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E10D751DD1A34300BC01C9 /* Assets.xcassets */; };
 		42E10D791DD1A34300BC01C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E10D771DD1A34300BC01C9 /* LaunchScreen.storyboard */; };
+		42E10D841DD1A38700BC01C9 /* ArtsyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E10D831DD1A38700BC01C9 /* ArtsyClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		127DACE672231471015ED586 /* Pods_Tarty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tarty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42046EE91DEAAB3B00787A78 /* ArtworkCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkCollectionView.swift; sourceTree = "<group>"; };
+		42046EEE1DEB634300787A78 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		42046EF01DEB674400787A78 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		42046EF61DEB77E100787A78 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		42046EF81DEB784700787A78 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		427E89301DEBB3FA007D975A /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		427E89321DEBB592007D975A /* DecoratedArtworksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecoratedArtworksView.swift; sourceTree = "<group>"; };
+		427E89341DEBB63E007D975A /* DecoratedArtworksView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DecoratedArtworksView.xib; sourceTree = "<group>"; };
+		427E89361DEC0A8A007D975A /* ArtworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkViewController.swift; sourceTree = "<group>"; };
+		429883DD1DD277AF003BC71B /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		429883E01DD277C1003BC71B /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		429883E21DD27822003BC71B /* Gene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gene.swift; sourceTree = "<group>"; };
+		429883E51DD28EAB003BC71B /* ArtworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkCell.swift; sourceTree = "<group>"; };
+		42B36C8C1DFB55F10092DDB0 /* CurateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurateViewController.swift; sourceTree = "<group>"; };
+		42B36C8E1DFE30C70092DDB0 /* NavigationTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationTableCell.swift; sourceTree = "<group>"; };
 		42E10D6B1DD1A34300BC01C9 /* Tarty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tarty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E10D6E1DD1A34300BC01C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42E10D701DD1A34300BC01C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		42E10D701DD1A34300BC01C9 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		42E10D731DD1A34300BC01C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42E10D751DD1A34300BC01C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42E10D781DD1A34300BC01C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42E10D7A1DD1A34300BC01C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42E10D831DD1A38700BC01C9 /* ArtsyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtsyClient.swift; sourceTree = "<group>"; };
+		77AC969F88000A07F2BCADF0 /* Pods-Tarty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tarty.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tarty/Pods-Tarty.release.xcconfig"; sourceTree = "<group>"; };
+		CF3D411F73E3657E92034D08 /* Pods-Tarty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tarty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tarty/Pods-Tarty.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +65,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281485484BB4BBFF329AAA7C /* Pods_Tarty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42046EEB1DEB47E600787A78 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				42046EEE1DEB634300787A78 /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		429883DC1DD277A1003BC71B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				429883DD1DD277AF003BC71B /* Artist.swift */,
+				429883E01DD277C1003BC71B /* Artwork.swift */,
+				429883E21DD27822003BC71B /* Gene.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		429883E41DD28E91003BC71B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				429883E51DD28EAB003BC71B /* ArtworkCell.swift */,
+				42046EE91DEAAB3B00787A78 /* ArtworkCollectionView.swift */,
+				427E89321DEBB592007D975A /* DecoratedArtworksView.swift */,
+				427E89341DEBB63E007D975A /* DecoratedArtworksView.xib */,
+				42B36C8E1DFE30C70092DDB0 /* NavigationTableCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		42E10D621DD1A34300BC01C9 = {
 			isa = PBXGroup;
 			children = (
 				42E10D6D1DD1A34300BC01C9 /* Tarty */,
 				42E10D6C1DD1A34300BC01C9 /* Products */,
+				4E86503AB284D597FA731C8B /* Pods */,
+				FBF882F9637FBEEA83108A8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +123,57 @@
 		42E10D6D1DD1A34300BC01C9 /* Tarty */ = {
 			isa = PBXGroup;
 			children = (
+				42046EEB1DEB47E600787A78 /* Helpers */,
+				429883E41DD28E91003BC71B /* Views */,
+				42E10D821DD1A37100BC01C9 /* API */,
+				42E10D811DD1A36400BC01C9 /* ViewControllers */,
+				429883DC1DD277A1003BC71B /* Models */,
 				42E10D6E1DD1A34300BC01C9 /* AppDelegate.swift */,
-				42E10D701DD1A34300BC01C9 /* ViewController.swift */,
 				42E10D721DD1A34300BC01C9 /* Main.storyboard */,
 				42E10D751DD1A34300BC01C9 /* Assets.xcassets */,
 				42E10D771DD1A34300BC01C9 /* LaunchScreen.storyboard */,
 				42E10D7A1DD1A34300BC01C9 /* Info.plist */,
 			);
 			path = Tarty;
+			sourceTree = "<group>";
+		};
+		42E10D811DD1A36400BC01C9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				42E10D701DD1A34300BC01C9 /* TutorialViewController.swift */,
+				42046EF01DEB674400787A78 /* WelcomeViewController.swift */,
+				42046EF61DEB77E100787A78 /* ContainerViewController.swift */,
+				42046EF81DEB784700787A78 /* CollectionViewController.swift */,
+				427E89301DEBB3FA007D975A /* ExploreViewController.swift */,
+				427E89361DEC0A8A007D975A /* ArtworkViewController.swift */,
+				42B36C8C1DFB55F10092DDB0 /* CurateViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		42E10D821DD1A37100BC01C9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				42E10D831DD1A38700BC01C9 /* ArtsyClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		4E86503AB284D597FA731C8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF3D411F73E3657E92034D08 /* Pods-Tarty.debug.xcconfig */,
+				77AC969F88000A07F2BCADF0 /* Pods-Tarty.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FBF882F9637FBEEA83108A8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				127DACE672231471015ED586 /* Pods_Tarty.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42E10D7D1DD1A34300BC01C9 /* Build configuration list for PBXNativeTarget "Tarty" */;
 			buildPhases = (
+				637BD4BB6C806B9ABD151B9F /* [CP] Check Pods Manifest.lock */,
 				42E10D671DD1A34300BC01C9 /* Sources */,
 				42E10D681DD1A34300BC01C9 /* Frameworks */,
 				42E10D691DD1A34300BC01C9 /* Resources */,
+				26C77372BD8A47EA8D0EFAA0 /* [CP] Embed Pods Frameworks */,
+				3AE4D9FC812CD79E5985643A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42E10D791DD1A34300BC01C9 /* LaunchScreen.storyboard in Resources */,
+				427E89351DEBB63E007D975A /* DecoratedArtworksView.xib in Resources */,
 				42E10D761DD1A34300BC01C9 /* Assets.xcassets in Resources */,
 				42E10D741DD1A34300BC01C9 /* Main.storyboard in Resources */,
 			);
@@ -132,13 +248,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26C77372BD8A47EA8D0EFAA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tarty/Pods-Tarty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3AE4D9FC812CD79E5985643A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tarty/Pods-Tarty-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		637BD4BB6C806B9ABD151B9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42E10D671DD1A34300BC01C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E10D711DD1A34300BC01C9 /* ViewController.swift in Sources */,
+				429883E11DD277C1003BC71B /* Artwork.swift in Sources */,
+				42046EF11DEB674400787A78 /* WelcomeViewController.swift in Sources */,
+				42046EEF1DEB634300787A78 /* Extensions.swift in Sources */,
+				42B36C8F1DFE30C70092DDB0 /* NavigationTableCell.swift in Sources */,
+				429883E61DD28EAB003BC71B /* ArtworkCell.swift in Sources */,
+				42E10D841DD1A38700BC01C9 /* ArtsyClient.swift in Sources */,
+				427E89331DEBB592007D975A /* DecoratedArtworksView.swift in Sources */,
+				42E10D711DD1A34300BC01C9 /* TutorialViewController.swift in Sources */,
+				427E89371DEC0A8A007D975A /* ArtworkViewController.swift in Sources */,
+				42B36C8D1DFB55F10092DDB0 /* CurateViewController.swift in Sources */,
+				429883DE1DD277AF003BC71B /* Artist.swift in Sources */,
+				429883E31DD27822003BC71B /* Gene.swift in Sources */,
 				42E10D6F1DD1A34300BC01C9 /* AppDelegate.swift in Sources */,
+				42046EF71DEB77E100787A78 /* ContainerViewController.swift in Sources */,
+				427E89311DEBB3FA007D975A /* ExploreViewController.swift in Sources */,
+				42046EF91DEB784700787A78 /* CollectionViewController.swift in Sources */,
+				42046EEA1DEAAB3B00787A78 /* ArtworkCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +361,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -204,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -231,6 +411,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -247,7 +428,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -257,7 +438,9 @@
 		};
 		42E10D7E1DD1A34300BC01C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF3D411F73E3657E92034D08 /* Pods-Tarty.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GFSP92A3FB;
 				INFOPLIST_FILE = Tarty/Info.plist;
@@ -270,7 +453,9 @@
 		};
 		42E10D7F1DD1A34300BC01C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77AC969F88000A07F2BCADF0 /* Pods-Tarty.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GFSP92A3FB;
 				INFOPLIST_FILE = Tarty/Info.plist;
@@ -300,6 +485,7 @@
 				42E10D7F1DD1A34300BC01C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,14 +8,62 @@
 
 import UIKit
 
-class DecoratedArtworkView: UIView {
+class DecoratedArtworksView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet var contentView: UIView!
+    @IBOutlet var imageViews: [UIImageView]!
+    var artworks = [Artwork]()
+    
+    func reload(index: Int, withDuration: TimeInterval = 2) {
+        let artwork = artworks[index]
+        let imageView = imageViews[index]
+        
+        if let url = artwork.links?.thumbnail {
+            
+            UIView.animate(withDuration: 0, animations: {
+                imageView.alpha = 0
+            })
+            
+            imageView.setImageWith(url)
+            
+            UIView.animate(withDuration: withDuration, animations: {
+                imageView.alpha = 1
+            })
+        }
+        
     }
-    */
+    
+    func reload() {
+        for i in 0...(imageViews.count - 1) {
+            reload(index: i, withDuration: 1)
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        initSubviews()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        initSubviews()
+    }
+    
+    func initSubviews() {
+        let nib = UINib(nibName: "DecoratedArtworksView", bundle: nil)
+        nib.instantiate(withOwner: self, options: nil)
+        
+        contentView.frame = bounds
+        addSubview(contentView)
+        
+        for imageView in imageViews {
+            imageView.layer.cornerRadius = 10
+        }
+    }
+
 
 }

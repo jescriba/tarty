@@ -8,21 +8,20 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class CollectionViewController: UIViewController {
 
     @IBOutlet weak var collectionView: ArtworkCollectionView!
+    var delegate: ContainerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 28)!, NSForegroundColorAttributeName: UIColor(red:0.00, green:0.40, blue:1.00, alpha:1.0)]
         
-        // TODO handle offline users
-        // TODO Use user preferences and add infinite loading rather than 
-        // loading huge size up front
+        // TODO Load artworks in collection and infinite scroll
         let queue = DispatchQueue(label: "loadArtworks")
         queue.async {
-            self.loadArtworks(offset: 0, size: 200)
+            self.loadArtworks(offset: 0, size: 10)
         }
     }
     

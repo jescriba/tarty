@@ -10,26 +10,90 @@ import UIKit
 
 class ExploreViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: ArtworkCollectionView!
+    var delegate: ContainerViewController?
+    var artworkViewController: ArtworkViewController!
+    var refreshCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        collectionView.collectionDelegate = self
+        
+        navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 28)!, NSForegroundColorAttributeName: UIColor(red:0.00, green:0.40, blue:1.00, alpha:1.0)]
+        
+        // TODO handle offline users
+        // TODO Use user preferences and add infinite loading rather than
+        // loading huge size up front
+        let queue = DispatchQueue(label: "loadArtworks")
+        queue.async {
+            self.loadArtworks(offset: 0, size: 25)
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        artworkViewController = storyboard.instantiateViewController(withIdentifier: "ArtworkViewController") as? ArtworkViewController
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.deselectItems()
     }
-    */
+    
+    func loadArtworks(offset: Int, size: Int) {
+        ArtsyClient.sharedInstance?.waitForXAppToken()
+        
+        ArtsyClient.sharedInstance?.loadArtworks(offset: offset, size: size, success: {
+            (artworks: [Artwork]) -> () in
+            self.collectionView.artworks
+                = artworks
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.collectionView.reloadSelections()
+            }
+        }, failure: {
+            (error: Error?) -> () in
+            //
+        })
+    }
+    
+    func addArtworks() {
+        // TODO
+        let offset = refreshCount * (25 - 10)
+        let size = 25
+        ArtsyClient.sharedInstance?.waitForXAppToken()
+        ArtsyClient.sharedInstance?.loadArtworks(offset: offset, size: size, success: {
+            (artworks: [Artwork]) -> () in
+            self.collectionView.artworks
+                += artworks
+            var indexPaths = [IndexPath]()
+            for i in 0...24 {
+                let indexPath = IndexPath(row: offset + i, section: 0)
+                indexPaths.append(indexPath)
+            }
+            DispatchQueue.main.async {
+                UIView.performWithoutAnimation {
+                    self.collectionView.reloadSections(IndexSet(integer: 0))
+                }
+            }
+        }, failure: {
+            (error: Error?) -> () in
+            //
+        })
+    }
 
+}
+
+extension ExploreViewController: ArtworkCollectionViewDelegate {
+    func shouldRefresh() {
+        refreshCount += 1
+        addArtworks()
+    }
+    
+    func didSelect(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let artworkCollectionView = collectionView as! ArtworkCollectionView
+        let artwork = artworkCollectionView.artworks[indexPath.row]
+        artworkViewController.artwork = artwork
+        artworkCollectionView.deselectItems()
+        
+        present(artworkViewController, animated: true, completion: nil)
+    }
 }
