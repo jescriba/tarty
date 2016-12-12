@@ -33,6 +33,7 @@ class ArtworkViewController: UIViewController {
             })
             
             view.layoutIfNeeded()
+            
             if let url = artwork!.links?.thumbnail {
                 imageView.setImageWith(url)
                 UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
@@ -46,10 +47,13 @@ class ArtworkViewController: UIViewController {
             guard artist != nil else {return}
 
             view.layoutIfNeeded()
-            artistName.text = artist?.name
-            artistBirthDate.text = artist?.birthday
-            artistLocation.text = artist?.location
-            artistBirthPlace.text = artist?.hometown
+            
+            DispatchQueue.main.async {
+                self.artistName.text = self.artist?.name
+                self.artistBirthDate.text = self.artist?.birthday
+                self.artistLocation.text = self.artist?.location
+                self.artistBirthPlace.text = self.artist?.hometown
+            }
         }
     }
 

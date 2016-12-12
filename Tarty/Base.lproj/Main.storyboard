@@ -509,7 +509,7 @@
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="art" translatesAutoresizingMaskIntoConstraints="NO" id="3YS-RL-L7q">
-                                        <rect key="frame" x="20" y="160" width="325" height="437"/>
+                                        <rect key="frame" x="20" y="155" width="325" height="442"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9E-re-5bB">
                                         <rect key="frame" x="322" y="573" width="40" height="40"/>
@@ -531,7 +531,7 @@
                                     <constraint firstItem="TAY-86-bXm" firstAttribute="leading" secondItem="Gjo-sX-hij" secondAttribute="leading" constant="8" id="51G-DV-54K"/>
                                     <constraint firstItem="YCe-Ab-tRg" firstAttribute="centerY" secondItem="TAY-86-bXm" secondAttribute="centerY" id="Dxa-fE-w57"/>
                                     <constraint firstItem="YCe-Ab-tRg" firstAttribute="leading" secondItem="TAY-86-bXm" secondAttribute="trailing" constant="10" id="Hfz-RK-De6"/>
-                                    <constraint firstItem="3YS-RL-L7q" firstAttribute="top" secondItem="TAY-86-bXm" secondAttribute="bottom" constant="20" id="OkB-B6-USC"/>
+                                    <constraint firstItem="3YS-RL-L7q" firstAttribute="top" secondItem="TAY-86-bXm" secondAttribute="bottom" constant="15" id="OkB-B6-USC"/>
                                     <constraint firstItem="3YS-RL-L7q" firstAttribute="leading" secondItem="Gjo-sX-hij" secondAttribute="leading" constant="20" id="QC6-GV-fdv"/>
                                     <constraint firstAttribute="bottom" secondItem="3YS-RL-L7q" secondAttribute="bottom" constant="20" id="XBy-3d-PCO"/>
                                     <constraint firstAttribute="bottom" secondItem="X9E-re-5bB" secondAttribute="bottom" constant="4" id="a8x-3Q-ehp"/>
