@@ -11,6 +11,7 @@ import UIKit
 class ExploreViewController: UIViewController {
 
     @IBOutlet weak var collectionView: ArtworkCollectionView!
+    var blurView: UIVisualEffectView!
     var delegate: ContainerViewController?
     var artworkViewController: ArtworkViewController!
     var refreshCount = 0
@@ -32,6 +33,10 @@ class ExploreViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         artworkViewController = storyboard.instantiateViewController(withIdentifier: "ArtworkViewController") as? ArtworkViewController
+        
+        let blurEffect = UIBlurEffect(style: .light)
+        blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = view.frame
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,6 +99,17 @@ extension ExploreViewController: ArtworkCollectionViewDelegate {
         artworkViewController.artwork = artwork
         artworkCollectionView.deselectItems()
         
+        view.addSubview(blurView)
+        
+        artworkViewController.delegate = self
         present(artworkViewController, animated: true, completion: nil)
     }
+}
+
+extension ExploreViewController: ArtworkViewControllerDelegate {
+    
+    func willDismiss() {
+        blurView.removeFromSuperview()
+    }
+    
 }

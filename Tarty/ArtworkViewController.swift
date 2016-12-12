@@ -9,6 +9,10 @@
 import UIKit
 import AFNetworking
 
+protocol ArtworkViewControllerDelegate {
+    func willDismiss()
+}
+
 class ArtworkViewController: UIViewController {
     
     @IBOutlet weak var addButton: UIButton!
@@ -19,6 +23,7 @@ class ArtworkViewController: UIViewController {
     @IBOutlet weak var artistName: UILabel!
     @IBOutlet weak var artistBirthPlace: UILabel!
     @IBOutlet weak var artistImageView: UIImageView!
+    var delegate: ArtworkViewControllerDelegate?
     var artwork: Artwork? {
         didSet {
             guard artwork != nil else {return}
@@ -98,6 +103,7 @@ class ArtworkViewController: UIViewController {
     
     func onPan(recognizer: UIPanGestureRecognizer) {
         if recognizer.translation(in: view).y > 0 {
+            delegate?.willDismiss()
             dismiss(animated: true, completion: nil)
         }
     }
