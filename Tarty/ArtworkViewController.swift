@@ -53,6 +53,12 @@ class ArtworkViewController: UIViewController {
                 self.artistBirthDate.text = self.artist?.birthday
                 self.artistLocation.text = self.artist?.location
                 self.artistBirthPlace.text = self.artist?.hometown
+                if let url = self.artist!.links?.thumbnail {
+                    self.artistImageView.setImageWith(url)
+                    UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
+                        self.artistImageView.alpha = 1
+                    }, completion: nil)
+                }
             }
         }
     }
