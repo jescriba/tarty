@@ -99,7 +99,7 @@ extension ExploreViewController: ArtworkCollectionViewDelegate {
         artworkViewController.artwork = artwork
         artworkCollectionView.deselectItems()
         
-        view.addSubview(blurView)
+        navigationController?.view.addSubview(blurView)
         
         artworkViewController.delegate = self
         present(artworkViewController, animated: true, completion: nil)
