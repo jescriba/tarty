@@ -17,20 +17,26 @@ PODS:
   - Alamofire (4.2.0)
   - BDBOAuth1Manager (2.0.0):
     - AFNetworking/NSURLSession (~> 3.0.0)
+  - Bolts/Tasks (1.8.4)
   - CircularSpinner (1.2.0)
+  - Parse (1.14.2):
+    - Bolts/Tasks (~> 1.8)
 
 DEPENDENCIES:
   - AFNetworking
   - Alamofire
   - BDBOAuth1Manager
   - CircularSpinner
+  - Parse
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   BDBOAuth1Manager: 92d17d06f8a648602962304cd2f35ae7394fa001
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   CircularSpinner: 80b8ee3eda59b66d20631d4ca7c7c83720931739
+  Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
 
-PODFILE CHECKSUM: 79f377c88f96aa57c9890318cbb5effc96b6c3c0
+PODFILE CHECKSUM: bf95e28a4c14592b33adb2daaf340b664e2e5675
 
 COCOAPODS: 1.1.1

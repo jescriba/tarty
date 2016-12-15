@@ -29,7 +29,7 @@ class ArtworkViewController: UIViewController {
             guard artwork != nil else {return}
             
             artwork?.fetchArtist(success: {
-                (artist: Artist) -> () in
+                (artist: Artist?) -> () in
                 self.artist = artist
             }, failure: {
                 (error: Error?) -> () in
@@ -39,6 +39,7 @@ class ArtworkViewController: UIViewController {
             
             view.layoutIfNeeded()
             
+            imageView.alpha = 0
             if let url = artwork!.links?.thumbnail {
                 imageView.setImageWith(url)
                 UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
@@ -54,10 +55,11 @@ class ArtworkViewController: UIViewController {
             view.layoutIfNeeded()
             
             DispatchQueue.main.async {
-                self.artistName.text = self.artist?.name
-                self.artistBirthDate.text = self.artist?.birthday
-                self.artistLocation.text = self.artist?.location
-                self.artistBirthPlace.text = self.artist?.hometown
+                self.artistName.text = self.artist?.name ?? ""
+                self.artistBirthDate.text = self.artist?.birthday ?? ""
+                self.artistLocation.text = self.artist?.location ?? ""
+                self.artistBirthPlace.text = self.artist?.hometown ?? ""
+                self.artistImageView.alpha = 0
                 if let url = self.artist!.links?.thumbnail {
                     self.artistImageView.setImageWith(url)
                     UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
@@ -71,7 +73,7 @@ class ArtworkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 28)!, NSForegroundColorAttributeName: UIColor(red:0.00, green:0.40, blue:1.00, alpha:1.0)]        
+        navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Helvetica Neue", size: 28)!, NSForegroundColorAttributeName: UIColor(red:0.00, green:0.40, blue:1.00, alpha:1.0)]
         
         if let url = artwork?.links?.thumbnail {
             imageView.setImageWith(url)
@@ -94,6 +96,11 @@ class ArtworkViewController: UIViewController {
         backgroundView.layer.cornerRadius = 20
         
         addButton.addTarget(self, action: #selector(onAddButton), for: .valueChanged)
+        
+        artistName.adjustsFontSizeToFitWidth = true
+        artistBirthDate.adjustsFontSizeToFitWidth = true
+        artistBirthPlace.adjustsFontSizeToFitWidth = true
+        artistLocation.adjustsFontSizeToFitWidth = true
     }
     
     func onAddButton() {

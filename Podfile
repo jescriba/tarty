@@ -10,5 +10,6 @@ target 'Tarty' do
   pod 'BDBOAuth1Manager'
   pod 'CircularSpinner'
   pod 'Alamofire'
+  pod 'Parse'
 
 end

@@ -35,13 +35,13 @@ class Artwork: NSObject {
         }
     }
     
-    func fetchArtist(success: ((Artist) -> ())?, failure: ((Error?) -> ())?) {
+    func fetchArtist(success: ((Artist?) -> ())?, failure: ((Error?) -> ())?) {
         
         if let id = self.id {
             ArtsyClient.sharedInstance?.loadArtists(artworkId: id, success: {
                 (artists: [Artist]) -> () in
                 self.artist = artists.first
-                success?(self.artist!)
+                success?(self.artist)
             }, failure: {
                 (error: Error?) -> () in
                 //

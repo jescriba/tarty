@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Setup the config
+        let config = ParseClientConfiguration(block: {
+            (configuration: ParseMutableClientConfiguration) -> Void in
+            configuration.server = "https://tarty.herokuapp.com/"
+            configuration.applicationId = "tarty"
+        })
+        
+        // Start parse
+        Parse.initialize(with: config)
+        
+        // Enable auto user!
+        PFUser.enableAutomaticUser()
         
         return true
     }
