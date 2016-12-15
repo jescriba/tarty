@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Parse
 
 class Artwork: NSObject {
+    static let className = "Test-Artwork-Parse"
     var id: String?
     var artistId: String?
     var artist: Artist?
@@ -19,6 +21,15 @@ class Artwork: NSObject {
     var blurb: String?
     var imageVersions: [String]?
     var links: ArtworkLinks?
+    
+    init(pfObject: PFObject) {
+        id = pfObject.object(forKey: "id") as? String
+        artistId = pfObject.object(forKey: "artist_id") as? String
+        title = pfObject.object(forKey: "artist") as? String
+        medium = pfObject.object(forKey: "medium") as? String
+        category = pfObject.object(forKey: "category") as? String
+        var blurb
+    }
     
     init(dictionary: NSDictionary) {
         id = dictionary["id"] as? String
@@ -55,6 +66,7 @@ class Artwork: NSObject {
 class ArtworkLinks: NSObject {
     
     var thumbnail: URL?
+    var largeImage: URL?
     var genes: URL?
     var artists: URL?
     var similarArtworks: URL?

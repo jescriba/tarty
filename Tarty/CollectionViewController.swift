@@ -21,18 +21,15 @@ class CollectionViewController: UIViewController {
         // TODO Load artworks in collection and infinite scroll
         let queue = DispatchQueue(label: "loadArtworks")
         queue.async {
-            self.loadArtworks(offset: 0, size: 10)
+            self.loadCollection(offset: 0, size: 10)
         }
     }
     
-    func loadArtworks(offset: Int, size: Int) {
-        ArtsyClient.sharedInstance?.waitForXAppToken()
-        
-        ArtsyClient.sharedInstance?.loadArtworks(offset: offset, size: size, success: {
+    func loadCollection(offset: Int, size: Int) {
+        TartyClient.loadCollection(offset: offset, size: size, success: {
             (artworks: [Artwork]) -> () in
             self.collectionView.artworks = artworks
             DispatchQueue.main.async {
-                
                 self.collectionView.reloadData()
                 self.collectionView.reloadSelections()
             }
