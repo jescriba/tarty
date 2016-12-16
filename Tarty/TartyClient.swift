@@ -11,6 +11,14 @@ import Parse
 
 class TartyClient: NSObject {
     
+    class func addToCollection() {
+        
+    }
+    
+    class func removeFromCollection() {
+        
+    }
+    
     class func loadCollection(offset: Int = 0, size: Int = 10, success: @escaping ([Artwork]) -> (), failure: @escaping (Error?) -> ()) {
         
         let query = PFQuery(className: Artwork.className)
@@ -24,6 +32,7 @@ class TartyClient: NSObject {
                     artworks.append(Artwork(pfObject: pfObject))
                 }
                 
+                User.collection = artworks
                 success(artworks)
             } else {
                 

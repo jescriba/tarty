@@ -28,7 +28,7 @@ class Artwork: NSObject {
         title = pfObject.object(forKey: "artist") as? String
         medium = pfObject.object(forKey: "medium") as? String
         category = pfObject.object(forKey: "category") as? String
-        var blurb
+        blurb = pfObject.object(forKey: "blurb") as? String
     }
     
     init(dictionary: NSDictionary) {

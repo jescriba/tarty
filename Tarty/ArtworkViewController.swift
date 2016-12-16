@@ -104,8 +104,16 @@ class ArtworkViewController: UIViewController {
     }
     
     func onAddButton() {
-        // Toggle the state and add/remove artwork from collection
         // TODO
+        guard artwork != nil else {return}
+        
+        if (User.collection?.containsArtwork(artwork!) ?? false) {
+            TartyClient.addToCollection(artwork)
+            isInCollection = true
+        } else {
+            TartyClient.removeFromCollection(artwork)
+            isInCollection = false
+        }
     }
     
     func onPan(recognizer: UIPanGestureRecognizer) {
