@@ -38,18 +38,20 @@ class DecoratedArtworksView: UIView {
         for (i, imageView) in imageViews.enumerated() {
             imageView.layer.cornerRadius = 10
             let randInt = Int(arc4random_uniform(3)) + 3 * i + 1
+            imageView.tag = randInt
             imageView.image = UIImage(named: "art\(randInt)")
         }
     }
     
     func animate() {
         let randImageInt = Int(arc4random_uniform(4))
-        let randInt = Int(arc4random_uniform(3)) + 3 * randImageInt + 1
+        let randInt = newRandomImageIndex(previous: imageViews[randImageInt].tag, imageIndex: randImageInt)
         
         UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
             self.imageViews[randImageInt].alpha = 0
         }, completion: nil)
         
+        imageViews[randImageInt].tag = randInt
         imageViews[randImageInt].image = UIImage(named: "art\(randInt)")
         
         UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
@@ -59,6 +61,16 @@ class DecoratedArtworksView: UIView {
         if timer == nil {
             timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
         }
+    }
+    
+    func newRandomImageIndex(previous: Int, imageIndex: Int) -> Int {
+        let rand = Int(arc4random_uniform(3)) + 3 * imageIndex + 1
+        
+        if previous == rand {
+            return newRandomImageIndex(previous: previous, imageIndex: imageIndex)
+        }
+        
+        return rand
     }
 
 

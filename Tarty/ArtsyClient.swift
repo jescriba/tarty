@@ -85,7 +85,7 @@ class ArtsyClient: BDBOAuth1SessionManager {
         
     }
     
-    func loadArtworks(offset: Int? = nil, size: Int? = nil, artistId: Int? = nil, showId: Int? = nil, similarToArtworkId: Int? = nil, geneId: Int? = nil, success: @escaping ([Artwork]) -> (), failure: @escaping (Error?) -> ()) {
+    func loadArtworks(offset: Int? = nil, size: Int? = nil, artistId: Int? = nil, showId: Int? = nil, similarToArtworkId: Int? = nil, geneId: String? = nil, success: @escaping ([Artwork]) -> (), failure: @escaping (Error?) -> ()) {
         
         var params = [(String, String)]()
         
@@ -99,7 +99,7 @@ class ArtsyClient: BDBOAuth1SessionManager {
             params.append(("size", String(size)))
         }
         if let geneId = geneId {
-            params.append(("gene_id", String(geneId)))
+            params.append(("gene_id", geneId))
         }
         if let similarToArtworkId = similarToArtworkId {
             params.append(("similar_to_artwork_id", String(similarToArtworkId)))

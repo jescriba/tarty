@@ -17,6 +17,8 @@
 		427E89331DEBB592007D975A /* DecoratedArtworksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427E89321DEBB592007D975A /* DecoratedArtworksView.swift */; };
 		427E89351DEBB63E007D975A /* DecoratedArtworksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427E89341DEBB63E007D975A /* DecoratedArtworksView.xib */; };
 		427E89371DEC0A8A007D975A /* ArtworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427E89361DEC0A8A007D975A /* ArtworkViewController.swift */; };
+		4292926E1E027F2B00A235F2 /* TartyClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4292926D1E027F2B00A235F2 /* TartyClient.swift */; };
+		429292721E05DFD700A235F2 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429292711E05DFD700A235F2 /* Collection.swift */; };
 		429883DE1DD277AF003BC71B /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429883DD1DD277AF003BC71B /* Artist.swift */; };
 		429883E11DD277C1003BC71B /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429883E01DD277C1003BC71B /* Artwork.swift */; };
 		429883E31DD27822003BC71B /* Gene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429883E21DD27822003BC71B /* Gene.swift */; };
@@ -42,6 +44,8 @@
 		427E89321DEBB592007D975A /* DecoratedArtworksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecoratedArtworksView.swift; sourceTree = "<group>"; };
 		427E89341DEBB63E007D975A /* DecoratedArtworksView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DecoratedArtworksView.xib; sourceTree = "<group>"; };
 		427E89361DEC0A8A007D975A /* ArtworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkViewController.swift; sourceTree = "<group>"; };
+		4292926D1E027F2B00A235F2 /* TartyClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TartyClient.swift; sourceTree = "<group>"; };
+		429292711E05DFD700A235F2 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		429883DD1DD277AF003BC71B /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		429883E01DD277C1003BC71B /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		429883E21DD27822003BC71B /* Gene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gene.swift; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 				429883DD1DD277AF003BC71B /* Artist.swift */,
 				429883E01DD277C1003BC71B /* Artwork.swift */,
 				429883E21DD27822003BC71B /* Gene.swift */,
+				429292711E05DFD700A235F2 /* Collection.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				42E10D831DD1A38700BC01C9 /* ArtsyClient.swift */,
+				4292926D1E027F2B00A235F2 /* TartyClient.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -306,11 +312,13 @@
 				42046EEF1DEB634300787A78 /* Extensions.swift in Sources */,
 				42B36C8F1DFE30C70092DDB0 /* NavigationTableCell.swift in Sources */,
 				429883E61DD28EAB003BC71B /* ArtworkCell.swift in Sources */,
+				4292926E1E027F2B00A235F2 /* TartyClient.swift in Sources */,
 				42E10D841DD1A38700BC01C9 /* ArtsyClient.swift in Sources */,
 				427E89331DEBB592007D975A /* DecoratedArtworksView.swift in Sources */,
 				42E10D711DD1A34300BC01C9 /* TutorialViewController.swift in Sources */,
 				427E89371DEC0A8A007D975A /* ArtworkViewController.swift in Sources */,
 				42B36C8D1DFB55F10092DDB0 /* CurateViewController.swift in Sources */,
+				429292721E05DFD700A235F2 /* Collection.swift in Sources */,
 				429883DE1DD277AF003BC71B /* Artist.swift in Sources */,
 				429883E31DD27822003BC71B /* Gene.swift in Sources */,
 				42E10D6F1DD1A34300BC01C9 /* AppDelegate.swift in Sources */,

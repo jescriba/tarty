@@ -99,6 +99,7 @@ extension ExploreViewController: ArtworkCollectionViewDelegate {
         artworkViewController.artwork = artwork
         artworkCollectionView.deselectItems()
         
+        blurView.alpha = 1
         navigationController?.view.addSubview(blurView)
         
         artworkViewController.delegate = self
@@ -109,7 +110,13 @@ extension ExploreViewController: ArtworkCollectionViewDelegate {
 extension ExploreViewController: ArtworkViewControllerDelegate {
     
     func willDismiss() {
-        blurView.removeFromSuperview()
+        UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
+            self.blurView.alpha = 0
+            self.view.layoutIfNeeded()
+        }, completion: {
+            (result: Bool?) -> () in
+            self.blurView.removeFromSuperview()
+        })
     }
     
 }
