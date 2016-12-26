@@ -20,12 +20,27 @@ class WelcomeViewController: UIViewController {
         
         DispatchQueue.global().async {
           ArtsyClient.sharedInstance?.waitForXAppToken()
+            ArtsyClient.sharedInstance?.loadArtworks(size: 3 * 6, success: {
+                (artworks: [Artwork]) -> () in
+                self.artworks = artworks
+            }, failure: {
+                (error: Error?) -> () in
+                //
+            })
         }
     }
     
     override var shouldAutorotate: Bool {
         get {
             return false
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tutorialVC = segue.destination as? TutorialViewController
+        
+        if let tutorialVC = tutorialVC {
+            tutorialVC.artworks = artworks
         }
     }
 }

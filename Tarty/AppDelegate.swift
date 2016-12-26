@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup the config
         let config = ParseClientConfiguration(block: {
             (configuration: ParseMutableClientConfiguration) -> Void in
-            configuration.server = "https://tarty.herokuapp.com/"
+            configuration.server = "https://tarty.herokuapp.com/parse/"
             configuration.applicationId = "tarty"
         })
         
@@ -30,6 +30,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Enable auto user!
         PFUser.enableAutomaticUser()
+        PFUser.current()?.saveInBackground()
+        
+        // Start Tutorial And Welcome Screen on First Use
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let hasCompletedTutorial = UserDefaults.standard.value(forKey: "CompletedTutorial") as? Bool ?? false
+        if !hasCompletedTutorial {
+            let welcomeVC = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController")
+            window?.rootViewController = welcomeVC
+            window?.makeKeyAndVisible()
+            UserDefaults.standard.set(true, forKey: "CompletedTutorial")
+        } else {
+            let containerVC = storyboard.instantiateViewController(withIdentifier: "ContainerViewController")
+            window?.rootViewController = containerVC
+            window?.makeKeyAndVisible()
+        }
         
         return true
     }

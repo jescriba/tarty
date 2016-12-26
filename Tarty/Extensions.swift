@@ -35,4 +35,24 @@ extension Array where Element:Artwork {
         return artworks
     }
     
+    func subset(from: Int, to: Int) -> [Artwork] {
+        if to < from {
+            return [Artwork]()
+        }
+        
+        if self.count == 0 {
+            return [Artwork]()
+        }
+        
+        var subset = [Artwork]()
+        for i in from...to {
+            if (self.count - 1) < i {
+                return subset
+            }
+            subset.append(self[i])
+        }
+        
+        return subset
+    }
+    
 }

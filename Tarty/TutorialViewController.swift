@@ -14,7 +14,9 @@ class TutorialViewController: UIViewController {
     @IBOutlet weak var backwardArrowButton: UIButton!
     @IBOutlet weak var forwardArrowButton: UIButton!
     @IBOutlet weak var collectionView: ArtworkCollectionView!
+    var artworks = [Artwork]()
     var page = 0
+    var pageCount = 3
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,21 +30,28 @@ class TutorialViewController: UIViewController {
         forwardArrowButton.addTarget(self, action: #selector(nextClicked), for: .touchUpInside)
         
         // TODO handle offline users
-        let queue = DispatchQueue(label: "loadArtworks")
-        queue.async {
-            self.loadArtworks(offset: 0)
+        if artworks.count == 0 {
+            let queue = DispatchQueue(label: "loadArtworks")
+            queue.async {
+                self.loadArtworks()
+            }
+        } else {
+            forwardArrowButton.isHidden = false
+            collectionView.artworks = artworks.subset(from: 0, to: 5)
+            collectionView.reloadData()
+            collectionView.reloadSelections()
         }
     }
     
-    func loadArtworks(offset: Int) {
+    func loadArtworks() {
         ArtsyClient.sharedInstance?.waitForXAppToken()
         
-        ArtsyClient.sharedInstance?.loadArtworks(offset: offset, size: 6, success: {
+        ArtsyClient.sharedInstance?.loadArtworks(size: 6 * pageCount, success: {
             (artworks: [Artwork]) -> () in
-            self.collectionView.artworks = artworks
+            self.artworks = artworks
+            self.collectionView.artworks = artworks.subset(from: 0, to: 5)
             DispatchQueue.main.async {
                 self.forwardArrowButton.isHidden = false
-                
                 self.collectionView.reloadData()
                 self.collectionView.reloadSelections()
             }
@@ -56,11 +65,12 @@ class TutorialViewController: UIViewController {
         backwardArrowButton.isHidden = false
         page += 1
         
-        progressTracker.progress = Float(page) / 3.0
+        collectionView.artworks = artworks.subset(from: 6 * page, to: 6 * page + 5)
+        collectionView.reloadData()
+        collectionView.reloadSelections()
         
-        let offset = page * 3
-        loadArtworks(offset: offset)
-        
+        progressTracker.progress = Float(page) / Float(pageCount)
+
         if page == 3 {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ContainerViewController")
@@ -72,10 +82,12 @@ class TutorialViewController: UIViewController {
     func backClicked() {
         page -= 1
         
-        progressTracker.progress = Float(page) / 3.0
-
-        let offset = page * 3
-        loadArtworks(offset: offset)
+        collectionView.artworks = artworks.subset(from: 6 * page, to: 6 * page + 5)
+        collectionView.reloadData()
+        collectionView.reloadSelections()
+        
+        progressTracker.progress = Float(page) / Float(pageCount)
+        
         if page == 0 {
             backwardArrowButton.isHidden = true
         }

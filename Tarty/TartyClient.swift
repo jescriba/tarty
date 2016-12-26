@@ -10,18 +10,29 @@ import Foundation
 import Parse
 
 class TartyClient: NSObject {
-    
-    class func addToCollection() {
+
+    class func addToCollection(artwork: Artwork) {
         
+        artwork.pfObject?.saveEventually()
+        //if let artist = artwork.artist {
+        //    artist.pfObject?.saveEventually()
+        //}
     }
     
-    class func removeFromCollection() {
+    class func removeFromCollection(artwork: Artwork) {
+
+        artwork.pfObject?.deleteEventually()
+        artwork.pfObject = nil
         
+        if let artist = artwork.artist {
+            artist.pfObject?.deleteEventually()
+            artist.pfObject = nil
+        }
     }
     
     class func loadCollection(offset: Int = 0, size: Int = 10, success: @escaping ([Artwork]) -> (), failure: @escaping (Error?) -> ()) {
         
-        let query = PFQuery(className: Artwork.className)
+        let query = PFQuery(className: "ArtworkTest")
         query.whereKey("user", equalTo: PFUser.current()!)
         
         query.findObjectsInBackground(block: {
@@ -32,7 +43,7 @@ class TartyClient: NSObject {
                     artworks.append(Artwork(pfObject: pfObject))
                 }
                 
-                User.collection = artworks
+                Collection.artworks = artworks
                 success(artworks)
             } else {
                 
