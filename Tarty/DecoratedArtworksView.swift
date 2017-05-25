@@ -13,6 +13,7 @@ class DecoratedArtworksView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet var imageViews: [UIImageView]!
     var timer: Timer?
+    var animatedImageIndex: Int = 1
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,18 +45,24 @@ class DecoratedArtworksView: UIView {
     }
     
     func animate() {
-        let randImageInt = Int(arc4random_uniform(4))
-        let randInt = newRandomImageIndex(previous: imageViews[randImageInt].tag, imageIndex: randImageInt)
+        // Grab image index at random to change 
+        // Just not the same as the previous one
+        var randImageIndex = Int(arc4random_uniform(4))
+        while randImageIndex == animatedImageIndex {
+            randImageIndex = Int(arc4random_uniform(4))
+        }
+        animatedImageIndex = randImageIndex
+        let randInt = newRandomImageIndex(previous: imageViews[animatedImageIndex].tag, imageIndex: animatedImageIndex)
         
         UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
-            self.imageViews[randImageInt].alpha = 0
+            self.imageViews[self.animatedImageIndex].alpha = 0
         }, completion: nil)
         
-        imageViews[randImageInt].tag = randInt
-        imageViews[randImageInt].image = UIImage(named: "art\(randInt)")
+        imageViews[animatedImageIndex].tag = randInt
+        imageViews[animatedImageIndex].image = UIImage(named: "art\(randInt)")
         
         UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseInOut, animations: {
-            self.imageViews[randImageInt].alpha = 1
+            self.imageViews[self.animatedImageIndex].alpha = 1
         }, completion: nil)
         
         if timer == nil {
