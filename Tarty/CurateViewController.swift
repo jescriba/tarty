@@ -35,6 +35,7 @@ class CurateViewController: UIViewController {
         
         if artwork == nil {
             let offset = Int(arc4random_uniform(10000))
+            ArtsyClient.sharedInstance?.waitForXAppToken()
             ArtsyClient.sharedInstance?.loadArtworks(offset: offset, size: 1, success: {
                 (artworks: [Artwork]) -> () in
                 self.artwork = artworks.first!

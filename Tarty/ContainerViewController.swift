@@ -28,6 +28,7 @@ class ContainerViewController: UIViewController {
     @IBOutlet weak var navigationTableView: UITableView!
     @IBOutlet weak var contentViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
+    var isPanelOpen = false
     var leftMargin: CGFloat = 0
     var _page: Page = Page.collection
     var page: Page! {
@@ -64,6 +65,11 @@ class ContainerViewController: UIViewController {
         let collectionNavigationVC = storyboard.instantiateViewController(withIdentifier: "CollectionNavigationController") as! UINavigationController
         let exploreNavigationVC = storyboard.instantiateViewController(withIdentifier: "ExploreNavigationController") as! UINavigationController
         let curateNavigationVC = storyboard.instantiateViewController(withIdentifier: "CurateNavigationController") as! UINavigationController
+
+        let burgerButton = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger"), style: .plain, target: self, action: #selector(togglePanel))
+        collectionNavigationVC.navigationBar.topItem?.leftBarButtonItem = burgerButton
+        exploreNavigationVC.navigationBar.topItem?.leftBarButtonItem = burgerButton
+        curateNavigationVC.navigationBar.topItem?.leftBarButtonItem = burgerButton
 
         viewControllers.append(collectionNavigationVC)
         viewControllers.append(exploreNavigationVC)
@@ -102,11 +108,20 @@ class ContainerViewController: UIViewController {
             }
         }
     }
+
+    func togglePanel() {
+        if isPanelOpen {
+            closeNavigationPanel()
+        } else {
+            openNavigationPanel()
+        }
+    }
     
     func openNavigationPanel() {
         UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseInOut, animations: {
             self.contentViewLeadingConstraint.constant = self.maxLeadingConstant
             self.view.layoutIfNeeded()
+            self.isPanelOpen = true
         }, completion: nil)
     }
     
@@ -114,6 +129,7 @@ class ContainerViewController: UIViewController {
         UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseInOut, animations: {
             self.contentViewLeadingConstraint.constant = 0
             self.view.layoutIfNeeded()
+            self.isPanelOpen = false
         }, completion: nil)
     }
 
